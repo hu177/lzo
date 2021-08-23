@@ -379,6 +379,10 @@ type Writer struct {
 	crc32      hash.Hash32
 }
 
+func (w *Writer) Flush() error {
+	return nil
+}
+
 // NewWriter creates a new Writer that satisfies writes by compressing data
 // written to w.
 func NewWriter(w io.Writer) *Writer {
